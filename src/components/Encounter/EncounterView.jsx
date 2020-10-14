@@ -3,6 +3,7 @@ import './EncounterView.css';
 import pokemart from '../../img/pokemart.png';
 import pokedex from '../../img/pokedexsmol.png'
 import { UserContext } from '../Context/Context'
+import EncounterButton from '../EncounterButton/EncounterButton'
 
 
 function EncounterView() {
@@ -45,8 +46,9 @@ function EncounterView() {
     <h3>Lvl: {user.currentTrainer.lvl}</h3>
     <h3>Moneyz $ {user.currentTrainer.currency}</h3>
 
-            <img src={user.pokemon.front_normal_image} alt={user.pokemon.name} />
+            <img id = "pokemonImage" alt={user.pokemon.name} />
             <h3>A wild {user.pokemon.name} has appeared!</h3>
+            <EncounterButton/>
             <div>
 
                 <a href='/pokemart' style={{ color: 'yellow' }}>
