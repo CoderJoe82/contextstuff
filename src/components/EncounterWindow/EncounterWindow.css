@@ -1,0 +1,11 @@
+#encounterWindow {
+    width: 400px;
+    height: 400px;
+    border: none;
+}
+
+#encounterImage {
+    width: 100%;
+    height: 100%;
+    border: transparent;
+}
