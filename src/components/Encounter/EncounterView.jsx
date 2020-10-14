@@ -8,6 +8,7 @@ import { UserContext } from '../Context/Context'
 
 function EncounterView() {
   const user = useContext(UserContext)
+  const [pokemon, setPokemon] = useState([]);
   // const [currentTrainer, setCurrentTrainer] = useState([]);
   useEffect(() => {
     const url = "http://127.0.0.1:8000/current_trainer";
@@ -30,13 +31,13 @@ function EncounterView() {
       });
   }, []);
 
-  let trainerData = Object.values(user.currentTrainer).map((name) => name);
+
 
   return (
     <React.Fragment>
       <div className="encounter-view">
         <h1>Pokemon Encounter</h1>
-        <h1>{trainerData[0]}</h1>
+        <h1>{user.currentTrainer.username}</h1>
         <div>
           <a href="/pokemart" style={{ color: "yellow" }}>
             <img src={pokemart} alt="pokemart" />
