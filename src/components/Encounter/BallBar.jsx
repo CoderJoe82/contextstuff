@@ -8,8 +8,13 @@ import { UserContext } from "../Context/Context";
 
 function BallBar() {
   const user = useContext(UserContext);
+  const catchButton = document.getElementById('catchThatPokemonButton')
 
   const handleClick = (e) => {
+    catchButton.disabled = user.disabled;
+    if (catchButton.disabled) {
+      user.setDisabled(false)
+    }
     const buttons = document.getElementsByClassName('buttonSelection')
     for (let i = 0; i < buttons.length; i++) {
         buttons[i].style.border = 'none'

@@ -82,6 +82,7 @@ function EncounterButtons() {
         document.getElementById('moneyz').textContent = user.currentTrainer.currency
       }
     }
+    document.getElementById('catchThatPokemonButton').disabled = user.disabled
     console.log(user.currentTrainer.pokedexed)
   }
 
