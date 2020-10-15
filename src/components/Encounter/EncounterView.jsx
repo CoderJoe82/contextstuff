@@ -2,8 +2,10 @@ import React, { useContext, useEffect } from 'react';
 import './EncounterView.css';
 import pokemart from '../../img/pokemart.png';
 import pokedex from '../../img/pokedexsmol.png'
+import BallBar from './BallBar'
 import { UserContext } from '../Context/Context'
-import EncounterButton from '../EncounterButton/EncounterButton'
+import EncounterButtons from './EncounterButtons'
+import EncounterWindow from './EncounterWindow'
 
 
 function EncounterView() {
@@ -39,36 +41,39 @@ function EncounterView() {
 
 
     return (
-        <div className="encounter-view">
-            <h1>Pokémon Encounter</h1>
-            <h1>Trainer {user.currentTrainer.username}</h1>
-    <h3>Exp Points: {user.currentTrainer.exp}</h3>
-    <h3>Lvl: {user.currentTrainer.lvl}</h3>
-    <h3>Moneyz $ {user.currentTrainer.currency}</h3>
+        <React.Fragment>
 
-            <img id = "pokemonImage" alt={user.pokemon.name} />
-            <h3>A wild {user.pokemon.name} has appeared!</h3>
-            <EncounterButton/>
-            <div>
-
-                <a href='/pokemart' style={{ color: 'yellow' }}>
-                    <img src={pokemart} alt='pokemart' />
-                Pokémart
-
-                </a>
+            <div className="encounter-view">
+                <h1>Pokémon Encounter</h1>
+                <h1>Trainer {user.currentTrainer.username}</h1>
+        <h3>Exp Points: {user.currentTrainer.exp}</h3>
+        <h3>Lvl: {user.currentTrainer.lvl}</h3>
+        <h3>Moneyz $ {user.currentTrainer.currency}</h3>
+    
+                {/* <img src={user.pokemon.front_normal_image} alt={user.pokemon.name} />
+                <h3>A wild {user.pokemon.name} has appeared!</h3> */}
+            <EncounterWindow/>
+            <EncounterButtons/>
+                <div>
+    
+                    <a href='/pokemart' style={{ color: 'yellow' }}>
+                        <img src={pokemart} alt='pokemart' />
+                    Pokémart
+    
+                    </a>
+                </div>
+                <div>
+                    <a href='/pokedex' style={{ color: 'yellow' }}>
+    
+                        <img src={pokedex} alt='pokedex' />
+                    Pokédex
+                    </a>
+    
+                </div>
             </div>
-            <div>
-                <a href='/pokedex' style={{ color: 'yellow' }}>
-
-                    <img src={pokedex} alt='pokedex' />
-                Pokédex
-                </a>
-
-            </div>
-        </div>
-
+            <BallBar/>
+            </React.Fragment>
     )
-
 };
 
 export default EncounterView;

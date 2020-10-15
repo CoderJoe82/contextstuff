@@ -4,17 +4,19 @@ import './EncounterButton.css'
 import $ from 'jquery'
 
 function EncounterButton() {
-    const pokeball = useContext(UserContext)
-
+    const user = useContext(UserContext)
+    
     const handleEncounter = () => {
         const url = 'http://127.0.0.1:8000/api/Pokemon'
         fetch(url)
             .then(r => r.json())
             .then(image => {
-                console.log(image[Math.floor(Math.random() * Object.values(image).length) + 1].front_nomral_image)
-                document.getElementById('pokemonImage').src = image[Math.floor(Math.random() * Object.values(image).length) +1].front_nomral_image
+                
+                document.getElementById('pokemonImage').src = image[Math.floor(Math.random() * Object.keys(image).length) + 1].front_normal_image
                 
             })
+        user.currentTrainer.poke_ball -= 1;
+        console.log(user.currentTrainer)
         $('#encounterButton').hide()
         $('#catchButton').show()
     }
