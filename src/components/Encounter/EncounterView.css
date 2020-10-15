@@ -30,4 +30,6 @@ body {
   position: absolute;
   top: 3%;
   right: 3%;
+  display: flex;
+  flex-direction: column;
 }

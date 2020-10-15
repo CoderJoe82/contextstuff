@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import './PokeMartView.css';
 import pokemartbackground from '../../img/pokemartbackgroundv3.jpg'
 import { Card, ListGroupItem } from 'react-bootstrap'
@@ -6,12 +6,17 @@ import greatBall from "../../img/greatball.png"
 import pokeBall from "../../img/pokeballsprite.png"
 import ultraBall from "../../img/ultraball.png"
 import masterBall from "../../img/masterballsprite.png"
+import { UserContext } from '../Context/Context'
 
 
 
 function PokeMartView() {
+    
+    const user = useContext(UserContext)
 
     const handleBuy = () => {
+
+        console.log(user.currentTrainer)
         
     }
 
@@ -84,7 +89,7 @@ function PokeMartView() {
                     </ListGroupItem>
                 </Card>
             </div>
-                <button type="button" id="checkout" className="btn btn-success">Check Out</button>
+                <button type="button" id="checkout" className="btn btn-success" onClick = {handleBuy}>Check Out</button>
         </div>
     )
 

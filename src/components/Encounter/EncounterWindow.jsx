@@ -1,6 +1,7 @@
 import React, { Component, useContext } from 'react';
 import { UserContext } from '../Context/Context'
 import { Form, Button, Card } from 'react-bootstrap';
+import './EncounterWindow.css'
 
 class EncounterWindow extends Component {
     

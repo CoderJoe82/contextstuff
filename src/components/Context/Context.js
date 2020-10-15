@@ -11,6 +11,7 @@ export const UserProvider = ({ children }) => {
   const [pokemon, setPokemon] = useState([]);
   const [currentBall, setCurrentBall] = useState({})
   const [disabled, setDisabled] = useState(true)
+  const [currentLevel, setCurrentLevel] = useState(0)
 
 
   return (
@@ -31,7 +32,9 @@ export const UserProvider = ({ children }) => {
         currentBall,
         setCurrentBall,
         disabled,
-        setDisabled
+        setDisabled,
+        currentLevel,
+        setCurrentLevel
       }}
     >
       {children}
