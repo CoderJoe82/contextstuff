@@ -83,53 +83,60 @@ function PokedexView() {
         {" "}
         Back home
       </a>
-      <Card style={{ width: "20rem" }}>
-        <Card.Text>
-          {user.pokemonData.map(({ name }) => (
-            <li
-              key={name}
-              className="pokeLis"
-              style={{ textTransform: "capitalize" }}
-              onClick={() => {
-                handlePokedexData(name);
-                handleShow();
-              }}
-            >
-              {name}
-            </li>
-          ))}
-        </Card.Text>
-      </Card>
-
-      
-
-      
+      <div id="cardImageHolder">
+        <img
+          src={process.env.PUBLIC_URL + "/pokedexlarge.png"}
+          id="pokedexMain"
+        />
+        <Card id="pokeList">
+          <Card.Text>
+            {user.pokemonData.map(({ name }) => (
+              <li
+                key={name}
+                className="pokeLis"
+                style={{ textTransform: "capitalize" }}
+                onClick={() => {
+                  handlePokedexData(name);
+                  handleShow();
+                }}
+              >
+                {name}
+              </li>
+            ))}
+          </Card.Text>
+        </Card>
+      </div>
 
       <Modal show={user.show} onHide={handleClose}>
         <Modal.Header closeButton>
           <Modal.Title>Gotta Catch 'em all!</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-              <div>
-                  <span>
-                      Name: {user.pokedexModal.name}<br/>
-                  </span>
-                  <span>
-                      <img alt = {user.pokedexModal.name} src = {user.pokedexModal.image}/><br/>
-                  </span>
-                  Abilities -<br/>
-                  <span>
-                      Ability One: {user.pokedexModal.ability_One}<br/>
-                      Ability Two: {user.pokedexModal.ability_Two}<br/>
-                      Ability Three: {user.pokedexModal.ability_Three}<br/>
-                  </span>
-                  Types -<br/>
-                  <span>
-                      Type One: {user.pokedexModal.type_One}<br/>
-                      Type Two: {user.pokedexModal.type_Two}
-                  </span>
-              </div>
-
+          <div>
+            <span>
+              Name: {user.pokedexModal.name}
+              <br />
+            </span>
+            <span>
+              <img alt={user.pokedexModal.name} src={user.pokedexModal.image} />
+              <br />
+            </span>
+            Abilities -<br />
+            <span>
+              Ability One: {user.pokedexModal.ability_One}
+              <br />
+              Ability Two: {user.pokedexModal.ability_Two}
+              <br />
+              Ability Three: {user.pokedexModal.ability_Three}
+              <br />
+            </span>
+            Types -<br />
+            <span>
+              Type One: {user.pokedexModal.type_One}
+              <br />
+              Type Two: {user.pokedexModal.type_Two}
+            </span>
+          </div>
         </Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={handleClose}>
