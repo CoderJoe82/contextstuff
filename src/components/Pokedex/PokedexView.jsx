@@ -2,7 +2,6 @@ import React, { useContext, useState, useEffect } from "react";
 import { UserContext } from "../Context/Context";
 import { Card, Modal, Button } from "react-bootstrap";
 import "./PokedexView.css";
-import PokedexModal from "../Pokedex/PokedexModal";
 
 function PokedexView() {
   const user = useContext(UserContext);
