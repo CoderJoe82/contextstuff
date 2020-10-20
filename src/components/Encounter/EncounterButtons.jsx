@@ -161,7 +161,7 @@ console.log(user.capturedPokemon)
         alert("You ran out of master balls!");
       } else {
         pokemonCaught()
-        const trainerMegaBall = user.currentTrainer.mega_ball -= 1;
+        const trainerMasterBall = user.currentTrainer.master_ball -= 1;
         const trainerExp = user.currentTrainer.exp += 10;
         const trainerCurrency = user.currentTrainer.currency += 100
           const url = 'http://127.0.0.1:8000/api/PokemonTrainer/'
@@ -171,7 +171,7 @@ console.log(user.capturedPokemon)
             headers: {
               'Content-Type': 'application/json'
             },
-            body: JSON.stringify({poke_ball: trainerMegaBall, exp: trainerExp, currency: trainerCurrency})
+            body: JSON.stringify({poke_ball: trainerMasterBall, exp: trainerExp, currency: trainerCurrency})
           })
         user.currentTrainer.master_ball -= 1;
         user.currentTrainer.exp += 10;
