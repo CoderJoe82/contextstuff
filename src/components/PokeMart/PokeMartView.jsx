@@ -64,6 +64,7 @@ function PokeMartView() {
     console.log(pokeTotal)
     return (
         <div className='pokemart-view'>
+            <div id = "moneyzDisplay">Moneyz: {user.currentTrainer.currency} </div>
             <div className='pokemart-background'>
                 <img className='stretch' src={pokemartbackground} alt='pokemart background'></img>
             </div>

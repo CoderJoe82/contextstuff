@@ -97,6 +97,18 @@ console.log(user.capturedPokemon)
         alert("You ran out of great balls!");
       } else {
         pokemonCaught()
+        const trainerGreatBall = user.currentTrainer.great_ball -= 1;
+        const trainerExp = user.currentTrainer.exp += 10;
+        const trainerCurrency = user.currentTrainer.currency += 100
+          const url = 'http://127.0.0.1:8000/api/PokemonTrainer/'
+          const trainerId = user.currentTrainer.id
+          fetch(url + trainerId + '/', {
+            method: 'PATCH',
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({great_ball: trainerGreatBall, exp: trainerExp, currency: trainerCurrency})
+          })
         user.currentTrainer.great_ball -= 1;
         user.currentTrainer.exp += 10;
         document.getElementById(
@@ -117,6 +129,18 @@ console.log(user.capturedPokemon)
         alert("You ran out of ultra balls!");
       } else {
         pokemonCaught()
+        const trainerUltraBall = user.currentTrainer.ultra_ball -= 1;
+        const trainerExp = user.currentTrainer.exp += 10;
+        const trainerCurrency = user.currentTrainer.currency += 100
+          const url = 'http://127.0.0.1:8000/api/PokemonTrainer/'
+          const trainerId = user.currentTrainer.id
+          fetch(url + trainerId + '/', {
+            method: 'PATCH',
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({poke_ball: trainerUltraBall, exp: trainerExp, currency: trainerCurrency})
+          })
         user.currentTrainer.ultra_ball -= 1;
         user.currentTrainer.exp += 10;
         document.getElementById(
@@ -137,6 +161,18 @@ console.log(user.capturedPokemon)
         alert("You ran out of master balls!");
       } else {
         pokemonCaught()
+        const trainerMegaBall = user.currentTrainer.mega_ball -= 1;
+        const trainerExp = user.currentTrainer.exp += 10;
+        const trainerCurrency = user.currentTrainer.currency += 100
+          const url = 'http://127.0.0.1:8000/api/PokemonTrainer/'
+          const trainerId = user.currentTrainer.id
+          fetch(url + trainerId + '/', {
+            method: 'PATCH',
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({poke_ball: trainerMegaBall, exp: trainerExp, currency: trainerCurrency})
+          })
         user.currentTrainer.master_ball -= 1;
         user.currentTrainer.exp += 10;
         document.getElementById(
