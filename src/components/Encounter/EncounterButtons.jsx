@@ -109,8 +109,7 @@ console.log(user.capturedPokemon)
             },
             body: JSON.stringify({great_ball: trainerGreatBall, exp: trainerExp, currency: trainerCurrency})
           })
-        user.currentTrainer.great_ball -= 1;
-        user.currentTrainer.exp += 10;
+
         document.getElementById(
           "xpz"
         ).textContent = `Exp Points: ${user.currentTrainer.exp}`;
@@ -139,10 +138,9 @@ console.log(user.capturedPokemon)
             headers: {
               'Content-Type': 'application/json'
             },
-            body: JSON.stringify({poke_ball: trainerUltraBall, exp: trainerExp, currency: trainerCurrency})
+            body: JSON.stringify({ultra_ball: trainerUltraBall, exp: trainerExp, currency: trainerCurrency})
           })
-        user.currentTrainer.ultra_ball -= 1;
-        user.currentTrainer.exp += 10;
+
         document.getElementById(
           "xpz"
         ).textContent = `Exp Points: ${user.currentTrainer.exp}`;
@@ -171,10 +169,9 @@ console.log(user.capturedPokemon)
             headers: {
               'Content-Type': 'application/json'
             },
-            body: JSON.stringify({poke_ball: trainerMasterBall, exp: trainerExp, currency: trainerCurrency})
+            body: JSON.stringify({master_ball: trainerMasterBall, exp: trainerExp, currency: trainerCurrency})
           })
-        user.currentTrainer.master_ball -= 1;
-        user.currentTrainer.exp += 10;
+
         document.getElementById(
           "xpz"
         ).textContent = `Exp Points: ${user.currentTrainer.exp}`;
